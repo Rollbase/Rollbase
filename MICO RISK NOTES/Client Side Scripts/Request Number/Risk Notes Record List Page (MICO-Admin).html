@@ -1,0 +1,23 @@
+<style> table.rbs_wideTable { background:url({!#CURR_USER.company_logo}) no-repeat center left;} </style>
+<style>.detailHTMLCol table div { width:100%; text-align:center; }
+div.wide.rbwhite { text-align:center; }
+.detailHTMLCol table.wide { text-align:left; }
+.rbs_wideSectionLinks, .rbs_widesectionlinks a:link { display:none; }
+.rbs_mainContentTable table.top td.top { width:auto; } 
+.detailHTMLCol td.rbs_leftdatacolwide, .detailHTMLCol td.rbs_rightlabelwide { width:50%; } </style>
+
+<script>
+$(document).ready(function(){
+if ("{!#CURR_USER.insurance_company#code}" == 'MICO'){
+	$('[name="listViews"]>option:contains("All Risk Notes (MICO)")').attr('selected','true');
+	$("select[name='listViews']").trigger("change");
+	//$("div>div>span>div.inline-block").css('visibility','hidden');
+}
+else if ("{!#CURR_USER.insurance_company#code}" == 'TMD'){
+	$('[name="listViews"]>option:contains("All Risk Notes (TMD)")').attr('selected','true');
+	$("select[name='listViews']").trigger("change");
+	//$("div>div>span>div.inline-block").css('visibility','hidden');
+}
+});
+
+</script>
